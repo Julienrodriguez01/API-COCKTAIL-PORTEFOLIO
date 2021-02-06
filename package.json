@@ -1,0 +1,32 @@
+{
+  "name": "api-cocktail-portefolio",
+  "version": "1.0.0",
+  "description": "Une api pour gére votre collection de recette de cocktail",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Julienrodriguez01/API-COCKTAIL-PORTEFOLIO.git"
+  },
+  "keywords": [
+    "node",
+    "postgres",
+    "sqitch",
+    "joi",
+    "express"
+  ],
+  "author": "Julien Rodriguez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Julienrodriguez01/API-COCKTAIL-PORTEFOLIO/issues"
+  },
+  "homepage": "https://github.com/Julienrodriguez01/API-COCKTAIL-PORTEFOLIO#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "joi": "^17.3.0",
+    "pg": "^8.5.1"
+  }
+}
