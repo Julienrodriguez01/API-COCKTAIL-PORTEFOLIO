@@ -13,4 +13,12 @@ const router = Router();
  */
 router.get('/cocktails', cocktailController.allCocktail);
 
+/**
+ * Récupére tout les cocktails présent dans la bdd
+ * @route GET / cocktails/;id
+ * @group Cocktails - génération d'un cocktail celon sont id 
+ * @returns {Array} qui contient : id, name, type, ingredients, labels, note
+ */
+router.get('/cocktails/:id(\\d+)', cocktailController.oneCocktail);
+
 module.exports = router;

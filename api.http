@@ -7,3 +7,11 @@
 ### Route GET /cocktails
 
 GET {{baseUrl}}/cocktails
+
+### Route GET /cocktails/{id}
+
+GET {{baseUrl}}/cocktails/1
+
+### Route GET /cocktails/{mauvaise id}
+
+GET {{baseUrl}}/cocktails/2

@@ -26,3 +26,4 @@ COCKTAILS: Name,Type, Ingredients,Desing, Tags, Note
 ## Les route 
 
 "/cocktails" : cette route retourne tout les cocktails présent dans la table cocktails
+"/cocktails/id": Cette route retourne le cocktail a l'id mentioné 
