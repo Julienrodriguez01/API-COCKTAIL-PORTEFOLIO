@@ -21,3 +21,4 @@ COCKTAILS: Name,Type, Ingredients,Desing, Tags, Note
 
 - Lancé la commande ```npm i``` dans votre cli pour installer les dépendence nécessaire au projet.
 - Lancé la commande ```sqitch deploy db:pg:nom_de_votre_BDD ``` pour initialisé sqitch et ainsi crée les table dans votre base de donnée 
+- N'oublier pas de remplire votre .env, le env.example et la pour vous guider 
