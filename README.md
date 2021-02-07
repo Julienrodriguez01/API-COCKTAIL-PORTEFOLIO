@@ -25,6 +25,7 @@ COCKTAILS: Name,Type, Ingredients,Desing, Tags, Note
 
 ## Les route 
 
-GET"/cocktails" : Cette route retourne tous les cocktails présents dans la table cocktails
-GET"/cocktails/id": Cette route retourne le cocktail à l'id mentionner 
-POST"/cocktails": Cette route permet d'ajouter un cocktail avec les donnés de la query "name, type, ingrediens, labels, note"
+- GET"/cocktails" : Cette route retourne tous les cocktails présents dans la table cocktails
+- GET"/cocktails/id": Cette route retourne le cocktail à l'id mentionner 
+- POST"/cocktails": Cette route permet d'ajouter un cocktail avec les donnés de la query "name, type, ingrediens, labels, note"
+  
