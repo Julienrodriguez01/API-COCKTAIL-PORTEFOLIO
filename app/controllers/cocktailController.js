@@ -1,5 +1,6 @@
 const { request } = require('express');
 const cocktailMapper = require('../models/cocktailMapper');
+const Cocktail = require('../models/cocktail');
 
 const cocktailController = {
 
@@ -21,7 +22,22 @@ const cocktailController = {
 
          res.status(404).json(err.message);   
         }
+    },
+
+    newCocktail: async (req, res) => {
+        
+        const theCocktail = new Cocktail(req.body);
+
+        try {
+
+            await cocktailMapper.newCocktail(theCocktail);
+
+            res.json(theCocktail);
+        } catch (err) {
+            res.status(403).json(err.message);
+        }
     }
+
 };
 
 module.exports = cocktailController;

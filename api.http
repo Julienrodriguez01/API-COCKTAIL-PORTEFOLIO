@@ -15,3 +15,17 @@ GET {{baseUrl}}/cocktails/1
 ### Route GET /cocktails/{mauvaise id}
 
 GET {{baseUrl}}/cocktails/2
+
+### Route POST /cocktails
+
+POST {{baseUrl}}/cocktails
+Content-Type: application/json
+
+{
+   "name": "old fashion",
+   "type": "short drink",
+   "ingredients":"bourbon sucre roux angustura écorsse d orange",
+   "labels": "whisky",
+   "note": 4
+}
+
