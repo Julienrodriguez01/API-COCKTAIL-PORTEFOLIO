@@ -14,7 +14,7 @@ const router = Router();
 router.get('/cocktails', cocktailController.allCocktail);
 
 /**
- * Récupére tout les cocktails présent dans la bdd
+ * Récupére le cocktail présent a l'id mentioné dans la bdd
  * @route GET / cocktails/;id
  * @group Cocktails - Présentation des cocktail
  * @returns {Array} qui contient : id, name, type, ingredients, labels, note
@@ -33,5 +33,13 @@ router.get('/cocktails/:id(\\d+)', cocktailController.oneCocktail);
  * @returns {Array} 200 - le cocktail et généré dans la BDD
  */
 router.post('/cocktails', cocktailController.newCocktail);
+
+/**
+ * Suprime le cocktail présent a l'id mentioné dans la bdd
+ * @route GET / cocktails/;id
+ * @group Cocktails - Présentation des cocktail
+ * @returns
+ */
+router.delete('/cocktails/:id(\\d+)', cocktailController.deleteCocktail);
 
 module.exports = router;

@@ -10,7 +10,7 @@ GET {{baseUrl}}/cocktails
 
 ### Route GET /cocktails/{id}
 
-GET {{baseUrl}}/cocktails/1
+GET {{baseUrl}}/cocktails/3
 
 ### Route GET /cocktails/{mauvaise id}
 
@@ -22,10 +22,14 @@ POST {{baseUrl}}/cocktails
 Content-Type: application/json
 
 {
-   "name": "old fashion",
-   "type": "short drink",
-   "ingredients":"bourbon sucre roux angustura écorsse d orange",
-   "labels": "whisky",
-   "note": 4
+   "name": "mojito",
+   "type": "long drink",
+   "ingredients":"rhum menthe citron vert sucre roux eaux gazeuze ",
+   "labels": "rhum",
+   "note": 2
 }
+
+### Route DELETE /cocktails 
+
+DELETE  {{baseUrl}}/cocktails/8
 

@@ -49,17 +49,30 @@ const cocktailMapper = {
         
         try {
 
-           // const { rows } = 
-           await db.query(query, data);
+        // const { rows } = 
+            await db.query(query, data);
 
             //theCocktail.id = rows[0].id;
         } catch (err) {
             //throw new Error("Un cocktail a cette id existe déja");
             console.log(err)
         }
-    }
+    },
+
+    deleteCocktails: async (id) => {
+
+        
+        const result = await cocktailMapper.findOne(id);
+
+        if (result) {
+            await db.query(`
+                DELETE FROM cocktails
+                WHERE cocktails.id = $1;
+                `, [id]);
+        } else {
+            throw new Error("Pas de cocktail avec l'id " + id);
+        }}
+
 };
 
 module.exports = cocktailMapper; 
-
-
