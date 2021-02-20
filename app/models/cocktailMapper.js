@@ -71,7 +71,37 @@ const cocktailMapper = {
                 `, [id]);
         } else {
             throw new Error("Pas de cocktail avec l'id " + id);
-        }}
+        }}, 
+    
+    updateCocktail: async (theCocktail) => {
+
+        
+        const data = [
+            theCocktail.name,
+            theCocktail.type,
+            theCocktail.ingredients,
+            theCocktail.labels,
+            theCocktail.note,
+            theCocktail.id
+        ];
+
+        const query = `
+        UPDATE cocktails
+        SET
+        name = $1
+        type = $2
+        ingredients = $3
+        labels = $4
+        note = $5
+        WHERE cocktails.id = $6`;
+
+        try {
+            await db.query(query, data);
+
+        } catch (error) {
+            throw new Error(error);
+        };
+    }
 
 };
 

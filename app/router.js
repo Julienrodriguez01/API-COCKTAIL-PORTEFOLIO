@@ -4,7 +4,7 @@ const router = Router();
 
 const cocktailController = require('./controllers/cocktailController');
 
-const { validateBody } = require('./services/validator');
+const { validateBody, validateQuery } = require('./services/validator');
 const cocktailSchema = require('./shemas/cocktail');
 
 // v1
@@ -26,14 +26,14 @@ router.get('/cocktails', cocktailController.allCocktail);
 router.get('/cocktails/:id(\\d+)', cocktailController.oneCocktail);
 
 /**
- * Ajoute des propositions de segments de phrase et génère un Cadex basé sur les segments fournis
+ * Ajoute un nouveaux cocktail 
  * @route POST /cocktails
  * @group Cocktails - Présentation des cocktail
- * @param {string} name.body - le nom qu'on peut fournir
- * @param {string} type.body - l'adjectif qu'on peut fournir
- * @param {string} ingredients.body - le verbe qu'on peut fournir
- * @param {string} labels.body - le complément qu'on peut fournir
- * @param {string} note.body - le complément qu'on peut fournir
+ * @param {string} name.body - le nom du cocktail
+ * @param {string} type.body - le type du cocktail
+ * @param {string} ingredients.body - les ingredients du cocktail
+ * @param {string} labels.body - le label du cocktail 
+ * @param {string} note.body - la note du cocktail
  * @returns {Array} 200 - le cocktail et généré dans la BDD
  */
 router.post('/cocktails',validateBody(cocktailSchema), cocktailController.newCocktail);
@@ -45,5 +45,18 @@ router.post('/cocktails',validateBody(cocktailSchema), cocktailController.newCoc
  * @returns
  */
 router.delete('/cocktails/:id(\\d+)', cocktailController.deleteCocktail);
+
+/**
+ * Modifie un cocktail
+ * @route PUT /cocktails
+ * @group Cocktails - Présentation des cocktail
+ * @param {string} name.body - le nom du cocktail
+ * @param {string} type.body - le type du cocktail 
+ * @param {string} ingredients.body - les ingredients du cocktail
+ * @param {string} labels.body - le label du cocktail
+ * @param {string} note.body - la note du cocktail 
+ * @returns {Array} 200 - le cocktail et généré dans la BDD
+ */
+router.put('/cocktails/:id(\\d+)', validateQuery(cocktailSchema), cocktailController.updateCocktail);
 
 module.exports = router;

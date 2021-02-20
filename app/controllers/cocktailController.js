@@ -51,6 +51,17 @@ const cocktailController = {
 
             res.status(404).json("pas de cocktail " + id);
         } 
+    },
+
+    updateCocktail: async (req, res) => {
+
+        const theCocktail = req.body;
+        
+        try {
+            await cocktailMapper.updateCocktail(theCocktail);
+        } catch (error) {
+            res.status(403).json(error.message);
+        };
     }
 
 };

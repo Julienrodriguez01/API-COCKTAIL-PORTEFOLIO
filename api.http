@@ -29,7 +29,10 @@ Content-Type: application/json
    "note": 2
 }
 
-### Route DELETE /cocktails 
-
+### Route DELETE /cocktails/
 DELETE  {{baseUrl}}/cocktails/8
+
+#### Route DELETE /cocktails
+DELETE  {{baseUrl}}/cocktails/3
+
 
