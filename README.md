@@ -25,7 +25,8 @@ COCKTAILS: Name,Type, Ingredients,Desing, Tags, Note
 
 ## Les route 
 
-- GET"/cocktails" : Cette route retourne tous les cocktails présents dans la table cocktails
-- GET"/cocktails/id": Cette route retourne le cocktail à l'id mentionner dans la query 
-- POST"/cocktails": Cette route permet d'ajouter un cocktail avec les donnés de la query "name, type, ingrediens, labels, note"
-- DELETE "/cocktails": Cette route surime le cocktail mentioné dans la query 
+- GET"/cocktails" : cette route retourne tous les cocktails présents dans la table cocktails
+- GET"/cocktails/id": cette route retourne le cocktail à l'id mentionner dans la query 
+- POST"/cocktails": Cette route permet d'ajouter un cocktail avec les donnés dans le body "nom, type, ingrédient, labels, note"
+- DELETE "/cocktails/id": Cette route supprime le cocktail à l'id mentionner dans la requête  
+- PUT "/cocktails/id": Cette route modifie un cocktail à l'id mentionner dans la requête les informations a modifié doivent être dans la query

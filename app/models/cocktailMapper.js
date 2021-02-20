@@ -4,6 +4,7 @@ const db = require('../database');
 
 const cocktailMapper = {
 
+    // Méthode pour récupérer tous les cocktails 
     findAll: async () => {
         // Va chercher tous les cocktails dans la table cocktails
         const result = await db.query(`
@@ -15,6 +16,7 @@ const cocktailMapper = {
 
     },
 
+    // Méthode pour récupérer un cocktail
     findOne: async (id) => {
         // Va chercher un cocktail précis dans la table cocktails
         const result = await db.query(`
@@ -31,6 +33,7 @@ const cocktailMapper = {
         return new Cocktail(result.rows[0]);
     },
 
+    // Méthode qui ajoute un cocktail a la base de donné
     newCocktail: async (theCocktail) => {
 
         const data = [
@@ -59,6 +62,7 @@ const cocktailMapper = {
         }
     },
 
+    // Méthode qui suprime un cocktail 
     deleteCocktails: async (id) => {
 
         
@@ -73,6 +77,7 @@ const cocktailMapper = {
             throw new Error("Pas de cocktail avec l'id " + id);
         }}, 
     
+    // Méthode qui modifie un cocktail 
     updateCocktail: async (theCocktail) => {
 
         

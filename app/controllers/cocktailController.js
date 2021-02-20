@@ -4,12 +4,14 @@ const Cocktail = require('../models/cocktail');
 
 const cocktailController = {
 
+    // Méthode pour récupérer tous les cocktails 
     allCocktail: async (req, res) => {
         const cocktails = await cocktailMapper.findAll();
 
         res.json(cocktails);
     }, 
 
+    // Méthode pour récupérer un cocktail
     oneCocktail: async (req, res) => {
         const { id } = req.params;
 
@@ -24,6 +26,7 @@ const cocktailController = {
         }
     },
 
+    // Méthode qui ajoute un cocktail a la base de donné
     newCocktail: async (req, res) => {
         
         const theCocktail = new Cocktail(req.body);
@@ -38,6 +41,7 @@ const cocktailController = {
         }
     },
 
+    // Méthode qui suprime un cocktail 
     deleteCocktail: async (req, res) => {
 
         const { id } = req.params;
@@ -53,6 +57,7 @@ const cocktailController = {
         } 
     },
 
+    // Méthode qui modifie un cocktail 
     updateCocktail: async (req, res) => {
 
         const theCocktail = req.body;
