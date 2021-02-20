@@ -1,7 +1,11 @@
 const { Router } = require('express');
-const cocktailController = require('./controllers/cocktailController');
 
 const router = Router();
+
+const cocktailController = require('./controllers/cocktailController');
+
+const { validateBody } = require('./services/validator');
+const cocktailSchema = require('./shemas/cocktail');
 
 // v1
 
@@ -32,7 +36,7 @@ router.get('/cocktails/:id(\\d+)', cocktailController.oneCocktail);
  * @param {string} note.body - le complément qu'on peut fournir
  * @returns {Array} 200 - le cocktail et généré dans la BDD
  */
-router.post('/cocktails', cocktailController.newCocktail);
+router.post('/cocktails',validateBody(cocktailSchema), cocktailController.newCocktail);
 
 /**
  * Suprime le cocktail présent a l'id mentioné dans la bdd

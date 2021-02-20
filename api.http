@@ -22,7 +22,7 @@ POST {{baseUrl}}/cocktails
 Content-Type: application/json
 
 {
-   "name": "mojito",
+   "name": "mojit",
    "type": "long drink",
    "ingredients":"rhum menthe citron vert sucre roux eaux gazeuze ",
    "labels": "rhum",
