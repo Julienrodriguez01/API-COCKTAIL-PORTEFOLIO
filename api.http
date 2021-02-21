@@ -32,7 +32,10 @@ Content-Type: application/json
 ### Route DELETE /cocktails/
 DELETE  {{baseUrl}}/cocktails/8
 
-#### Route DELETE /cocktails
-DELETE  {{baseUrl}}/cocktails/3
+#### PATCH /cocktails
+PATCH  {{baseUrl}}/cocktails/9
+Content-Type: application/json
 
-
+{
+   "name": "teste"
+}

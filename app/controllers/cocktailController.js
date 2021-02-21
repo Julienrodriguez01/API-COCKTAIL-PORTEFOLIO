@@ -60,13 +60,31 @@ const cocktailController = {
     // Méthode qui modifie un cocktail 
     updateCocktail: async (req, res) => {
 
-        const theCocktail = req.body;
-        
-        try {
-            await cocktailMapper.updateCocktail(theCocktail);
-        } catch (error) {
-            res.status(403).json(error.message);
-        };
+        const { id } = req.params;
+        const data = req.body;
+        const cocktail = await cocktailMapper.findOne(id);
+
+        if (data.name) {
+            cocktail.name = data.name;
+        }
+
+        if (data.type) {
+            cocktail.type = data.type;
+        }
+
+        if (data.ingredients) {
+            cocktail.ingredients = data.ingredients;
+        }
+
+        if (data.labels) {
+            cocktail.labels = data.labels;
+        }
+
+        if (data.note) {
+            cocktail.note = data.note;
+        }
+
+        res.json(cocktail);
     }
 
 };

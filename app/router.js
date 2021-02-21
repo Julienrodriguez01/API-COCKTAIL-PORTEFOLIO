@@ -57,6 +57,6 @@ router.delete('/cocktails/:id(\\d+)', cocktailController.deleteCocktail);
  * @param {string} note.body - la note du cocktail 
  * @returns {Array} 200 - le cocktail et généré dans la BDD
  */
-router.put('/cocktails/:id(\\d+)', validateQuery(cocktailSchema), cocktailController.updateCocktail);
+router.patch('/cocktails/:id(\\d+)', cocktailController.updateCocktail);
 
 module.exports = router;

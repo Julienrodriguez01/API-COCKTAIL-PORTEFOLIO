@@ -77,18 +77,8 @@ const cocktailMapper = {
             throw new Error("Pas de cocktail avec l'id " + id);
         }}, 
     
-    // Méthode qui modifie un cocktail 
-    updateCocktail: async (theCocktail) => {
-
-        
-        const data = [
-            theCocktail.name,
-            theCocktail.type,
-            theCocktail.ingredients,
-            theCocktail.labels,
-            theCocktail.note,
-            theCocktail.id
-        ];
+/*     // Méthode qui modifie un cocktail 
+    updateCocktail: async (id) => {
 
         const query = `
         UPDATE cocktails
@@ -106,7 +96,7 @@ const cocktailMapper = {
         } catch (error) {
             throw new Error(error);
         };
-    }
+    } */
 
 };
 
