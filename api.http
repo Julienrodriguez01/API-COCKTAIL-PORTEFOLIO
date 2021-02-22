@@ -30,10 +30,10 @@ Content-Type: application/json
 }
 
 ### Route DELETE /cocktails/
-DELETE  {{baseUrl}}/cocktails/8
+DELETE  {{baseUrl}}/cocktails/10
 
 #### PATCH /cocktails
-PATCH  {{baseUrl}}/cocktails/9
+PATCH  {{baseUrl}}/cocktails/13
 Content-Type: application/json
 
 {

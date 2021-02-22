@@ -4,8 +4,8 @@ const router = Router();
 
 const cocktailController = require('./controllers/cocktailController');
 
-const { validateBody, validateQuery } = require('./services/validator');
-const cocktailSchema = require('./shemas/cocktail');
+const { validateBody } = require('./services/validator');
+const {  cocktailSchema, postSchema } = require('./schemas/cocktail');
 
 // v1
 
@@ -36,7 +36,7 @@ router.get('/cocktails/:id(\\d+)', cocktailController.oneCocktail);
  * @param {string} note.body - la note du cocktail
  * @returns {Array} 200 - le cocktail et généré dans la BDD
  */
-router.post('/cocktails',validateBody(cocktailSchema), cocktailController.newCocktail);
+router.post('/cocktails', validateBody(postSchema), cocktailController.newCocktail);
 
 /**
  * Suprime le cocktail présent a l'id mentioné dans la bdd
@@ -57,6 +57,6 @@ router.delete('/cocktails/:id(\\d+)', cocktailController.deleteCocktail);
  * @param {string} note.body - la note du cocktail 
  * @returns {Array} 200 - le cocktail et généré dans la BDD
  */
-router.patch('/cocktails/:id(\\d+)', cocktailController.updateCocktail);
+router.patch('/cocktails/:id(\\d+)', validateBody(cocktailSchema) ,cocktailController.updateCocktail);
 
 module.exports = router;
